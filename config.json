@@ -2,27 +2,27 @@
     "repos": {
         "stable": {
             "path": "repo",
-            "collection-id": "org.test.Stable",
-            "suggested-repo-name": "testrepo",
-            "runtime-repo-url": "https://dl.flathub.org/repo/flathub.flatpakrepo",
+            "collection-id": "org.stage.Stable",
+            "suggested-repo-name": "stagerepo",
+           "runtime-repo-url": "http://localhost:8000/stage.flatpakrepo",
             "gpg-key": null,
             "base-url": null,
             "subsets": {
                 "all": {
-                    "collection-id": "org.test.Stable",
+                    "collection-id": "org.stage.Stable",
                     "base-url": null
                 },
                 "free": {
-                    "collection-id": "org.test.Stable.test",
+                    "collection-id": "org.stage.Stable.test",
                     "base-url": null
                 }
             }
         },
         "beta": {
             "path": "beta-repo",
-            "collection-id": "org.test.Beta",
-            "suggested-repo-name": "testrepo-beta",
-            "runtime-repo-url": "https://dl.flathub.org/repo/flathub.flatpakrepo",
+            "collection-id": "org.stage.Beta",
+            "suggested-repo-name": "stagerepo-beta",
+            "runtime-repo-url": "http://localhost:8000/stage.flatpakrepo",
             "gpg-key": null,
             "hooks": {
                 "publish": ["true"],
@@ -35,11 +35,11 @@
             },
             "subsets": {
                 "all": {
-                    "collection-id": "org.test.Beta",
+                    "collection-id": "org.stage.Beta",
                     "base-url": null
                 },
                 "free": {
-                    "collection-id": "org.test.Beta.test",
+                    "collection-id": "org.stage.Beta.test",
                     "base-url": null
                 }
             }
@@ -47,7 +47,7 @@
     },
     "port": 8080,
     "delay-update-secs": 10,
-    "database-url": "postgres://%2Fvar%2Frun%2Fpostgresql/repo",
+    "database-url": "postgres://postgres:postgres@db/repo",
     "build-repo-base": "build-repo",
     "build-gpg-key": null,
     "gpg-homedir": null,

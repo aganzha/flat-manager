@@ -1,3 +1,5 @@
+# docker build . -t flat_manager:latest
+# docker pull docker.io/library/postgres:12
 FROM ubuntu:22.04 as builder
 
 RUN apt-get update && apt-get install -y git libpq-dev curl build-essential libgpgme-dev pkg-config libssl-dev libglib2.0-dev libostree-dev
