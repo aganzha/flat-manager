@@ -1,16 +1,17 @@
-version: "3"
+version: "3.1"
 
 services:
   flat-manager:
     privileged: true # needed for flatpak-builder to work
     container_name: flat-manager
     image: flat_manager:latest
+    restart: always
     ports:
       - "8080:8080"
     volumes:
       - ./postgres_data_local:/var/lib/postgresql/data
       - ./postgres_backup_local:/backups
-      - ./config.json:/mnt/config.json
+      - ./:/mnt/
     environment:
         - DATABASE_URL=postgres://postgres:postgres@db/repo
         - REPO_CONFIG=/mnt/config.json
